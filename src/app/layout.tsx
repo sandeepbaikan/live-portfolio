@@ -3,7 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import { profile } from "@/data/portfolio";
-const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const base = process.env.NEXT_PUBLIC_SITE_URL || "https://sandeepbaikan.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(base),
   title: {
@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     template: `%s | ${profile.name}`,
   },
   description: profile.summary,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: `${profile.name} — Engineering digital experiences`,
     description: profile.summary,
